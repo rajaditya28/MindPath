@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/components/providers/AuthProvider';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import type { LearningPath } from '@/lib/types';
 
@@ -86,9 +87,12 @@ export default function DashboardPage() {
                   {user.displayName || user.email}
                 </span>
                 {user.photoURL && (
-                  <img
+                  <Image
                     src={user.photoURL}
                     alt=""
+                    width={32}
+                    height={32}
+                    unoptimized
                     style={{ width: 32, height: 32, borderRadius: '50%' }}
                   />
                 )}

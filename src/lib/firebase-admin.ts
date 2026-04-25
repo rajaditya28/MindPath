@@ -16,7 +16,7 @@ function getFirebaseAdmin() {
 
   // Local development with service account
   if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-    return initializeApp({ projectId });
+    return initializeApp({ credential: applicationDefault(), projectId });
   }
 
   // Fallback: use env vars
@@ -40,10 +40,11 @@ function getFirebaseAdmin() {
 let db: Firestore | null = null;
 let auth: Auth | null = null;
 
+const firestoreDatabaseId = process.env.FIRESTORE_DATABASE_ID || 'default';
+
 export function getDb(): Firestore {
   if (!db) {
-    getFirebaseAdmin();
-    db = getFirestore();
+    db = getFirestore(getFirebaseAdmin(), firestoreDatabaseId);
   }
   return db;
 }

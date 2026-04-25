@@ -38,7 +38,6 @@ export default function ChatPage() {
       }
     } catch { /* ignore */ }
     setMessages([welcomeMessage()]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storageKey]);
 
   // Persist messages whenever they change
@@ -47,8 +46,7 @@ export default function ChatPage() {
     try {
       localStorage.setItem(storageKey, JSON.stringify(messages.slice(-100)));
     } catch { /* ignore quota errors */ }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [messages]);
+  }, [messages, storageKey]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });

@@ -1,3 +1,5 @@
+import { beforeEach, describe, expect, it } from '@jest/globals';
+
 // Test security utilities without importing from next/server
 // Re-implement the core functions to test their logic
 

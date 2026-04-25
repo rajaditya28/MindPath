@@ -2,6 +2,10 @@
 
 **MindPath** is an intelligent learning assistant that helps users learn new concepts effectively through personalized content, adaptive pacing, and AI-driven tutoring. Built entirely on Google Cloud services.
 
+## 🎯 Challenge Alignment
+
+MindPath addresses the **Learning Companion** challenge by combining personalized learning paths, adaptive quizzes, progress tracking, and a conversational AI tutor. The app uses Google Cloud services to generate curriculum, explain concepts, assess understanding, recommend educational media, translate content, synthesize audio, analyze images, and persist each learner's progress in Firestore.
+
 ## 🌟 Features
 
 ### Personalized Learning Paths

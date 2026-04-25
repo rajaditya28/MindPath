@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import type { ApiResponse, UserProfile, LearningPath, ChatMessage, QuizResult } from '@/lib/types';
 
 describe('API Response Types', () => {

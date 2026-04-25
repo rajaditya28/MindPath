@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     return createSuccessResponse(paths);
   } catch (error) {
     console.error('Error fetching learning paths:', error);
-    return createSuccessResponse([]);
+    return createErrorResponse('Failed to fetch learning paths.', 500);
   }
 }
 
@@ -113,9 +113,7 @@ Generate a comprehensive learning path for this topic.`;
     };
 
     if (userId) {
-      saveDocument(COLLECTIONS.LEARNING_PATHS, id, learningPath).catch((err) =>
-        console.error('Firestore save failed (non-fatal):', err)
-      );
+      await saveDocument(COLLECTIONS.LEARNING_PATHS, id, learningPath);
     }
 
     return createSuccessResponse(learningPath);

@@ -1,3 +1,5 @@
+import { describe, expect, it, jest } from '@jest/globals';
+
 // Mock the @google/genai module since it uses ESM
 jest.mock('@google/genai', () => ({
   GoogleGenAI: jest.fn(),
